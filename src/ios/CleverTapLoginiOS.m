@@ -12,7 +12,7 @@
     NSString* msg = [NSString stringWithFormat: @"Hello, %@, %@", email,CTid];
 
     NSDictionary *profile = @{@"Email" : email, // String
-                              @"Identity" : CTid} // String or number
+                              @"Identity" : CTid}; // String or number
 
     [[CleverTap sharedInstance] profilePush:profile];
 
