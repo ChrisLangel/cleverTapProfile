@@ -11,6 +11,11 @@
     NSString* CTid  = [[command arguments] objectAtIndex:1];
     NSString* msg = [NSString stringWithFormat: @"Hello, %@, %@", email,CTid];
 
+    NSDictionary *profile = @{@"Email" : email, // String
+                              @"Identity" : CTid} // String or number
+
+    [[CleverTap sharedInstance] profilePush:profile];
+
     CDVPluginResult* result = [CDVPluginResult
                                resultWithStatus:CDVCommandStatus_OK
                                messageAsString:msg];
