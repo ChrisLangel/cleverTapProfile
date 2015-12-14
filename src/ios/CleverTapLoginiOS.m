@@ -10,7 +10,7 @@
     NSString* name  = [[command arguments] objectAtIndex:0];
     NSString* email = [[command arguments] objectAtIndex:1];
     NSString* ctId  = [[command arguments] objectAtIndex:2];
-    NSString* msg = [NSString stringWithFormat: @"Hello, %@, %@", email,ctId];
+    // NSString* msg = [NSString stringWithFormat: @"Hello, %@, %@", email,ctId];
 
     NSDictionary *profile = @{@"Name"     : name,
                               @"Email"    : email, // String
@@ -18,11 +18,12 @@
 
     [[CleverTap push] profile:profile];
 
-    CDVPluginResult* result = [CDVPluginResult
-                               resultWithStatus:CDVCommandStatus_OK
-                               messageAsString:msg];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    // CDVPluginResult* result = [CDVPluginResult
+    //                            resultWithStatus:CDVCommandStatus_OK
+    //                            messageAsString:msg];
 
-    [self success:result callbackId:callbackId];
+    [self success:pluginResult callbackId:callbackId];
 }
 
 @end
