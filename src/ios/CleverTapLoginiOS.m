@@ -7,12 +7,14 @@
 {
 
     NSString* callbackId = [command callbackId];
-    NSString* email = [[command arguments] objectAtIndex:0];
-    NSString* CTid  = [[command arguments] objectAtIndex:1];
-    NSString* msg = [NSString stringWithFormat: @"Hello, %@, %@", email,CTid];
+    NSString* name  = [[command arguments] objectAtIndex:0];
+    NSString* email = [[command arguments] objectAtIndex:1];
+    NSString* ctId  = [[command arguments] objectAtIndex:2];
+    NSString* msg = [NSString stringWithFormat: @"Hello, %@, %@", email,ctId];
 
-    NSDictionary *profile = @{@"Email" : email, // String
-                              @"Identity" : CTid}; // String or number
+    NSDictionary *profile = @{@"Name"     : name,
+                              @"Email"    : email, // String
+                              @"Identity" : ctId}; // String or number
 
     [[CleverTap push] profile:profile];
 
