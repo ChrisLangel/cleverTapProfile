@@ -14,7 +14,7 @@
     NSDictionary *profile = @{@"Email" : email, // String
                               @"Identity" : CTid}; // String or number
 
-    [[CleverTap sharedInstance] profilePush:profile];
+    [[CleverTap push] profile:profile];
 
     CDVPluginResult* result = [CDVPluginResult
                                resultWithStatus:CDVCommandStatus_OK
