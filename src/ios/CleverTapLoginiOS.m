@@ -14,7 +14,7 @@
                               @"Email"    : email, // String
                               @"Identity" : ctId}; // String or number
 
-    [[CleverTap push] profile:profile];
+    [[CleverTap sharedInstance] profilePush:profile];
 
 }
 
